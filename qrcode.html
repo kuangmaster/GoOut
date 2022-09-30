@@ -215,8 +215,6 @@
         })
     }
 
-    const url = 'https://kuangmaster.github.io/GoOut/student_apply.html'
-    $('#div_ewm').html(createQrCode(url, qrColor))
 
     const date = new Date()
     date.setMinutes(0)
@@ -224,6 +222,9 @@
     const startTime = date.format('yyyy-MM-dd hh:mm')
     date.setHours(date.getHours() + 2)
     const endTime = date.format('yyyy-MM-dd hh:mm')
+    
+    const url = 'https://kuangmaster.github.io/GoOut/student_apply.html?time='
+    $('#div_ewm').html(createQrCode(url+date.format('yyyy-MM-dd hh:mm:ss'), qrColor))
 
     $('#div_yxsj').html('有效时间：' + startTime + '至' + endTime)
 
